@@ -1,14 +1,14 @@
 <template>
-  <div id="employee-form">
+  <div id="patient-form">
     <form @submit.prevent="handleSubmit">
       <div class="flex-row">
         <div class="flex-small two-thirds">
           <label>Patient Name</label>
-          <input v-model="employee.name" type="text" />
+          <input v-model="patient.name" type="text" />
         </div>
         <div class="flex-small one-third">
           <label for="choose">Select Gender</label>
-          <select id="choose" v-model="employee.gender">
+          <select id="choose" v-model="patient.gender">
             <option disabled selected>Please select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -18,11 +18,11 @@
       <div class="flex-row">
         <div class="flex-small two-thirds">
           <label>Phone No.</label>
-          <input v-model="employee.phone" type="number" />
+          <input v-model="patient.phone" type="number" />
         </div>
         <div class="flex-small one-third">
           <label>Age</label>
-          <input v-model="employee.age" type="number" />
+          <input v-model="patient.age" type="number" />
         </div>
       </div>
       <div class="flex-row">
@@ -43,10 +43,10 @@
 <script>
   import axios from 'axios'
   export default {
-    name: 'employee-form',
+    name: 'patient-form',
     data() {
       return {
-        employee: {
+        patient: {
           name: '',
           gender: '',
           phone: '',
@@ -66,9 +66,9 @@
 
             let {data} = await axios.post('http://127.0.0.1:5000/',datax)
 
-            this.employee.prediction = data.prediction
+            this.patient.prediction = data.prediction
 
-            this.$emit('add:employee', this.employee)
+            this.$emit('add:patient', this.patient)
         },
         
     }

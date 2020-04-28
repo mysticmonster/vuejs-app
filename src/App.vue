@@ -3,27 +3,27 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <h1>Patient Details</h1>
 
-    <employee-form @add:employee="addEmployee" />
-    <employee-table v-bind:employees="employees" />
+    <patient-form @add:patient="addPatient" />
+    <patient-table v-bind:patients="patients" />
   </div>
 </template>
 
 <script>
-  import EmployeeTable from '@/components/EmployeeTable.vue'
-  import EmployeeForm from '@/components/EmployeeForm.vue'
+  import PatientTable from '@/components/PatientTable.vue'
+  import PatientForm from '@/components/PatientForm.vue'
   // import ImageUpload from '@/components/ImageUpload.vue'
   
 
   export default {
     name: 'app',
     components: {
-      EmployeeTable,
-      EmployeeForm,
+      PatientTable,
+      PatientForm,
       // ImageUpload,
     },
     data() {
       return {
-        employees: [
+        patients: [
           {
             id: 1,
             name: 'Patient Name',
@@ -36,14 +36,14 @@
       }
     },
     methods: {
-    addEmployee(employee) {
+    addPatient(patient) {
       const lastId =
-        this.employees.length > 0
-          ? this.employees[this.employees.length - 1].id
+        this.patients.length > 0
+          ? this.patients[this.patients.length - 1].id
           : 0;
       const id = lastId + 1;
-      const newEmployee = { ...employee, id };
-      this.employees = [...this.employees, newEmployee]
+      const newPatient = { ...patient, id };
+      this.patients = [...this.patients, newPatient]
     }
   }
 }

@@ -14,7 +14,7 @@
   import PatientTable from '@/components/PatientTable.vue'
   import PatientForm from '@/components/PatientForm.vue'
   // import ImageUpload from '@/components/ImageUpload.vue'
-  import Navbar from '@/components/Navbar.vue'
+  // import Navbar from '@/components/Navbar.vue'
   
 
   export default {
@@ -22,7 +22,6 @@
     components: {
       PatientTable,
       PatientForm,
-      Navbar,
     },
     data() {
       return {

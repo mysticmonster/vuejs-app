@@ -7,7 +7,7 @@ import argparse
 import imutils
 import cv2
 import os
-from flask import jsonify
+from flask import Flask, jsonify
 from flask_cors import CORS
 
 # app = Flask(__name__)

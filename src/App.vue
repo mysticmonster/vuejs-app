@@ -3,8 +3,10 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <h1>Patient Details</h1>
 
+    <navbar />
     <patient-form @add:patient="addPatient" />
     <patient-table v-bind:patients="patients" />
+
   </div>
 </template>
 
@@ -12,6 +14,7 @@
   import PatientTable from '@/components/PatientTable.vue'
   import PatientForm from '@/components/PatientForm.vue'
   // import ImageUpload from '@/components/ImageUpload.vue'
+  import Navbar from '@/components/Navbar.vue'
   
 
   export default {
@@ -19,7 +22,7 @@
     components: {
       PatientTable,
       PatientForm,
-      // ImageUpload,
+      Navbar,
     },
     data() {
       return {

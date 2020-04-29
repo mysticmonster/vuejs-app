@@ -7,4 +7,7 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
 }).$mount('#app')

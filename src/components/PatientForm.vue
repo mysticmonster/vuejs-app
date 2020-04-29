@@ -61,8 +61,15 @@
         },
         async handleSubmit() {
             let datax = new FormData();
-            datax.append('name', 'my-picture');
+            
             datax.append('file', this.selectedFile); 
+
+
+          
+            datax.append('name', this.patient.name);
+            datax.append('gender', this.patient.gender);
+            datax.append('age', this.patient.age);
+            datax.append('phone', this.patient.phone);
 
             let {data} = await axios.post('http://127.0.0.1:5000/',datax)
 

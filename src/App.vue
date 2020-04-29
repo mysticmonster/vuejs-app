@@ -4,7 +4,7 @@
     <h1>Patient Details</h1>
 
     <patient-form @add:patient="addPatient" />
-    <patient-table v-bind:patients="patients" />
+    <patient-table v-bind:patients_new="patients" />
   </div>
 </template>
 
@@ -24,15 +24,7 @@
     data() {
       return {
         patients: [
-          {
-            id: 1,
-            name: 'Patient Name',
-            phone: 'Phone No.',
-            age: 'Age',
-            gender: 'Gender',
-            prediction: 'Prediction'
-          },
-        ],
+          ],
       }
     },
     methods: {
